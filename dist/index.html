@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A choose-your-own-adventure in the revived Griffonstone of David Silver’s Birds of a Feather.">
+  <meta name="theme-color" content="#162925">
+  <title>The Last Train to Griffonstone</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="story.js"></script>
+  <script defer src="play.js"></script>
+</head>
+<body>
+  <a class="skip" href="#story">Skip to story</a>
+  <header class="masthead">
+    <div class="brand"><span class="mark" aria-hidden="true">✦</span><span>Griffonstone</span></div>
+    <nav aria-label="Game controls">
+      <button class="quiet" id="journal-button" type="button">Endings <span id="count"></span></button>
+      <button class="quiet" id="restart-button" type="button">Start over</button>
+    </nav>
+  </header>
+  <main class="book">
+    <aside class="plate" aria-label="Griffonstone railway illustration">
+      <img src="griffonstone.webp" width="1280" height="853" alt="A griffon courier watches the steam train approach along the rocky slopes of Griffonstone at dusk.">
+      <div class="caption"><span>THE EQUestrian LINE</span><span>Evening service</span></div>
+    </aside>
+    <article id="story" class="story" aria-labelledby="title">
+      <div class="eyebrow" id="place"></div>
+      <h1 id="title" tabindex="-1">The Last Train to Griffonstone</h1>
+      <div id="prose"></div>
+      <section aria-labelledby="actions-title">
+        <h2 id="actions-title">What do you do?</h2>
+        <div id="actions"></div>
+      </section>
+      <button class="back" id="back-button" type="button" hidden>Back one choice</button>
+      <noscript><p>Enable JavaScript to play the adventure.</p></noscript>
+    </article>
+  </main>
+  <footer>Set in the Griffonstone of David Silver’s <cite>Birds of a Feather</cite>.</footer>
+  <dialog id="journal" aria-labelledby="journal-title">
+    <div class="dialog-head"><h2 id="journal-title">Endings</h2><button class="close" id="journal-close" type="button">Close</button></div>
+    <p id="journal-description"></p>
+    <ul id="journal-list"></ul>
+  </dialog>
+  <dialog id="restart" aria-labelledby="restart-title">
+    <h2 id="restart-title">Start the story over?</h2>
+    <p>Your discovered endings will stay in your journal.</p>
+    <div class="dialog-actions">
+      <button class="close" id="restart-cancel" type="button" autofocus>Keep playing</button>
+      <button class="close primary" id="restart-confirm" type="button">Start over</button>
+    </div>
+  </dialog>
+</body>
+</html>
