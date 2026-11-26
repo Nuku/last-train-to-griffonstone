@@ -2,6 +2,17 @@ const byId = (id) => document.getElementById(id);
 const start = 'dusk';
 const endings = Object.keys(story).filter((key) => story[key].outcome);
 const saveKey = 'last-train-to-griffonstone:v1';
+const legacyEndingScenes = {
+  footpath: 'escort',
+  commons: 'accounts',
+  publicworks: 'hearing',
+  turnback: 'siding',
+  byyourword: 'erased',
+  late: 'secondlook',
+  emptyhook: 'washout',
+  understone: 'hold',
+  lostline: 'wreck'
+};
 
 function load() {
   try {
@@ -9,7 +20,13 @@ function load() {
     const route = [start];
     if (Array.isArray(saved?.route)) {
       for (const next of saved.route.slice(1)) {
-        if (!story[route.at(-1)].choices?.some(({ to }) => to === next)) break;
+        const choices = story[route.at(-1)].choices;
+        if (!choices?.some(({ to }) => to === next)) {
+          // Older saves went straight to these endings.
+          const addedScene = legacyEndingScenes[next];
+          if (!choices?.some(({ to }) => to === addedScene)) break;
+          route.push(addedScene);
+        }
         route.push(next);
       }
     }

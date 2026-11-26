@@ -2,7 +2,7 @@
 
 [Play the adventure](https://nuku.github.io/last-train-to-griffonstone/)
 
-You are a courier in the revived Griffonstone of David Silver’s *Birds of a Feather*. The rail has shifted, and the evening train from Equestria is already on its way. Your choices can lead to nine endings.
+You are a courier in the revived Griffonstone of David Silver’s *Birds of a Feather*. The rail has shifted, and the evening train from Equestria is already on its way. Each run takes three to six choices and can lead to one of 22 endings.
 
 Open `dist/index.html` in a browser to play locally. The game runs without a build step and stores your current run and ending journal in your browser.
 
