@@ -75,7 +75,7 @@ function render(moveFocus = false) {
   byId('cover-plate').hidden = isEnding;
   endingPlate.hidden = !isEnding;
   if (isEnding) {
-    const imagePath = 'endings/' + key + '.webp';
+    const imagePath = 'endings/' + key + '.webp?v=griffon-anatomy';
     endingImage.alt = node.artAlt;
     endingImage.src = imagePath;
     endingPlate.style.setProperty('--ending-art', 'url("' + imagePath + '")');
