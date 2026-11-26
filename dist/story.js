@@ -1,6 +1,6 @@
 const choice = (label, to, detail = '') => ({ label, to, detail });
 const scene = (place, title, prose, choices) => ({ place, title, prose, choices });
-const ending = (outcome, place, title, prose) => ({ outcome, place, title, prose });
+const ending = (outcome, place, title, prose, artAlt) => ({ outcome, place, title, prose, artAlt });
 
 const story = {
   dusk: scene('Griffonstone · The lower station', 'The last train to Griffonstone', [
@@ -242,117 +242,117 @@ const story = {
     'At the market kitchens, a pony asked whether the soup had meat in it. The cook lifted both lids and went through what was in each. She set the lids back down. “Thank you for asking.” She looked briefly astonished to have meant it.',
     'Long after the last passenger had found a bed, Mera set a bowl down in front of you. You recognized the chipped rim. Your own bowl, from home. Mera pushed a spoon toward you. “They sent it up when you missed supper.”',
     'You dipped your beak. The stew was hot.'
-  ]),
+  ], 'Mera sets a steaming bowl in front of the tired courier in the crowded market kitchen.'),
   commons: ending('Good', 'The market kitchens', 'Buy another loaf', [
     'The settlement took three arguments and one pot of tea. The kitchens would be paid out of the station’s contingency purse. The merchants put the use of their spare rooms on the same sheet. A pony conductor added the crew’s names. She had two legs of the return journey tomorrow and wanted her brakemare to sleep.',
     'It was the first time you had seen a merchant argue somebody else’s rate up. The butcher slid the tally back to the baker and tapped the empty line. “You said hot breakfast. Charge them for the fuel.”',
     'The following week there was a fresh chalkboard outside the station. It listed where a traveler could get a bed and what a loaf cost. At the bottom, in Mera’s hand, was a smaller line. Ask if you’re hungry.',
     'You added a second line. Ask if you can cook.'
-  ]),
+  ], 'Griffons and a pony conductor gather beside a station chalkboard and baskets of fresh bread.'),
   publicworks: ending('Good', 'The council chamber', 'Put a drain in it', [
     'Giselda asked Mera to show her where the water went. Mera used three cups, two spoons, and the council’s clean tablecloth. There was a spirited objection to the tablecloth. There was very little objection to the drain.',
     'The council funded a new retaining wall and paid the crews to inspect the rest of the grade. A shopkeeper made them add a footpath for the days work stopped the trains. Their shop was halfway up it. You decided the country could afford to profit twice.',
     'At the reopening Corven gave Mera the signal key. She turned it, handed it straight back, and stepped aside to let the train go by. You knew what she was watching. So were you.',
     'Below the new wall, water ran out exactly where it was meant to.'
-  ]),
+  ], 'A train passes safely above the new retaining wall while clear water pours from its drain.'),
   turnback: ending('Mixed', 'The closed station', 'A quiet platform', [
     'The train left the siding. Up the grade, its tail lamp dwindled to the size of a coal in a stove. Every seat went back the way it had come. A guard brought a list down to the platform so the waiting families would know who was safe.',
     'The freight went back with it. Two shops closed early and the cook made the same lentils three nights running. On the fourth, the baker put a fresh loaf in your hands and folded your talons around it. “You’ll eat it.”',
     'It took a week before the wall could be approached. Each evening you went home by the long way and passed the empty platform. Each evening, every griffon and pony who had ridden that train had somewhere to be.'
-  ]),
+  ], 'The courier stands on a quiet platform as a red tail lamp recedes uphill at dusk.'),
   byyourword: ending('Bad', 'The station office', 'The story that stuck', [
     'A guard heard the bells. The conductress saw the red. Mera watched your hand on the key through the office window. Corven let you finish anyway.',
     'The passengers slept safely up in the market. The station sent a good account of the evening to the council. Your name appeared on it twice, once for calling the stop and once for lying about it.',
     'A season later there was another meeting about the rail. You had a fair idea for keeping the platform clear in a storm. When you raised your hand, the chair called on the griffon sitting behind you.',
     'Mera walked you home. At your door, she brushed a bit of station grit off your shoulder. “Say the fair thing earlier next time.”'
-  ]),
+  ], 'At the courier’s door, Mera brushes grit from their shoulder.'),
   late: ending('Bad', 'The lower station', 'A second opinion', [
     'Corven found the second inspector. You could see her jacket on the market stairs. You could see the engine’s yellow lamp at the bend at the same time.',
     'The wall dropped. The driver braked, and the engine stopped with its front wheels hanging out over a place where the earth had been. The freight wagons leaned into each other. The passenger coach stayed on the rails.',
     'When the driver climbed out she couldn’t put weight on one hoof. Mera gave her a shoulder. The inspector stood by the rail with an unopened notebook in her hand.',
     'The notebook was dry. So were the places where your name would have gone.'
-  ]),
+  ], 'Mera helps the pony driver away from an engine stopped at the broken rails.'),
   emptyhook: ending('Bad', 'The upper bend', 'The empty hook', [
     'You held the little flame as high as your shoulder would let you. The engine went by below you. Then came a sound you could feel in the root.',
     'The coach stayed on the grade. Two freight wagons went off it. The coal runner brought the guard back and helped get you down. You had a red cut across each palm from the handle.',
     'There was a hook for the lamp at the station. You left the broken handle hanging there. On your next shift the hook was empty. There was a new lamp at the bend, and a guard assigned to tend it. The guard was the coal runner’s sister.',
     'The runner still waved when you passed. For a while you found that harder to bear than if they hadn’t.'
-  ]),
+  ], 'An empty lamp hook hangs in the foreground as a young griffon waves from the bend.'),
   understone: ending('Bad', 'The service ledge', 'The long way up', [
     'You got the hook into a crack above your head. The stone it caught came loose. Then the ledge went.',
     'Mera had stopped the train. She spent the next hour finding a rope crew and the next three trying to get eyes on you. By the time you felt their rope, you were shivering too hard to tie it. You had to let the smallest hauler come down and do it for you.',
     'The healers said the wing would mend. They said it again when you asked about flying. They had a great deal of patience. You discovered you had very little.',
     'Mera brought your supper right up the stairs for a month. You always heard her coming. One of these days, you thought, you’d be the one carrying it.'
-  ]),
+  ], 'Mera brings supper up the stairs to the courier, whose wing is wrapped.'),
   lostline: ending('Bad', 'The platform edge', 'A brace will hold', [
     'You got the wagon to move. It settled another claw-width toward the ravine and pulled the engine with it. Sedge threw the rope down and got the driver to take it before you could try again.',
     'The driver came out through the window. It took every hauler on the platform to get her up to the street. By then she could barely close her hoof around the rope.',
     'The rail stayed shut for months. Shops made do without the freight you had been so sure they needed tonight. Sedge worked on the new wall. When you brought your tools, he gave you a place to work and you did your share.',
     'At lunch you sat with the crew. It took a long time for anygriff to pass you the bread.'
-  ]),
+  ], 'A stoneworker offers the courier bread at the unfinished retaining wall.'),
   bluecase: ending('Good', 'The market kitchens', 'Father’s weights', [
     'The case was exactly where the pony had said. A bit too far under the seat for the conductor to reach with her hoof. You hooked it with two talons and passed it up through the door.',
     'The sister came to the kitchens in a floury apron. She worked the clasp twice before it opened. The weights were dull brown and the smallest had a dint in the side. Her sister touched that one first.',
     'A week later you found a bun in your ledger wrap. “Two ounces,” the note read. It was a little more than that. You could tell without needing weights.'
-  ]),
+  ], 'Two sisters open a battered blue case to see their father’s baking weights.'),
   claimcheck: ending('Mixed', 'The market kitchens', 'A place in the ledger', [
     'You made the conductor write “blue with a split handle.” The pony made her add “under the third seat.” Everyone came up for supper with enough time left to eat it hot.',
     'The case came back four days later. The pony found you at the station with a loaf to thank you. You’d seen their sister selling bread on the market stairs that morning. When you asked what the delay had cost them, the pony broke the loaf in two.',
     '“Four days.” They gave you the larger piece. “I had four days with her.”'
-  ]),
+  ], 'A pony beside a blue valise offers the courier half a loaf.'),
   thinpot: ending('Mixed', 'The market kitchens', 'Add a little water', [
     'The butcher brought two onions. The baker brought the end of yesterday’s loaf and a heel of today’s. It was enough to make supper if you put a good deal of trust in the onions.',
     'A passenger washed the bowls. There was no fuel left for breakfast when the haulers came to carry the bags back down. You took the morning delivery on an empty crop before anyone could ask you to feed them again.',
     'Next time a kettle went on for travelers, a cook brought her own chalk and wrote the price of the fuel on the door.'
-  ]),
+  ], 'A cook looks into the nearly empty kettle as the courier collects an empty frame.'),
   bill: ending('Bad', 'The market kitchens', 'On the conductor’s account', [
     'The conductor counted her bits onto the table. They paid for supper. At the baker’s tally she turned her pouch upside down and a button fell out. Your name was on the request to feed the passengers. Hers was on the bill.',
     'The cooks served what they had started. Some passengers left the next morning thinking the railway had covered the meal. The conductor walked the whole way to the uphill platform with a broken strap held shut in one hoof.',
     'When the next passenger run was announced, the kitchens sent a price in writing. It was the same price. They asked for it up front.'
-  ]),
+  ], 'A pony conductor empties her coin pouch onto the kitchen table.'),
   wingroad: ending('Good', 'The market stairs', 'The way freight went', [
     'The council paid the haulers by the load while the wall was rebuilt. A smith insisted the payment include the trip back uphill with the empty frames. The haulers elected her to read the tally out loud every week.',
     'By reopening day, you’d learned who could get an egg down the stairs whole and who could be trusted with one to eat on the way. You’d also learned what the market could do for three weeks without a train.',
     'The conductor offered Sedge a place unloading the first wagon. Sedge waved her over to the load frames. “I’ve got two griffons you ought to meet.”'
-  ]),
+  ], 'A smith introduces her fellow haulers to a conductor on the market stairs.'),
   repeat: ending('Bad', 'The lower station', 'Same rain', [
     'The council found enough for the wall. The old drain stayed up where the plans ended. You were there when the fresh stone was signed off, gray and dry and square against the platform.',
     'The first hard rain ran out under the waiting room. The second came up through the boards. Corven closed the line himself that evening. He turned the key without waiting for you.',
     'Mera came down with the original drawing, still in its fold. This time there was money for the drain. There was also a second bill for the stone.'
-  ]),
+  ], 'Rainwater floods the station floor while Mera opens a drawing near the signal key.'),
   firstload: ending('Good', 'The market stairs', 'The top of the list', [
     'There was a griffon waiting outside the healers’ rooms with the hem of her apron pressed to somebody’s paw. She saw what you were carrying and got the door all the way open with her tail.',
     'The other two loads went through the kitchens. Every merchant got a little of what they needed. The rest went back up the line with the train. You wrote every piece down, including the ice that arrived as most of a bucket of water.',
     'At dusk the cook handed you the empty bucket. There was a hot loaf sitting in the bottom and a clean cloth folded over it. “That’s on the list too.”'
-  ]),
+  ], 'The courier delivers a basket of fresh bandages to a healer waiting in the doorway.'),
   paidfirst: ending('Mixed', 'The uphill switch', 'In receipt order', [
     'The cloth merchant got the first two loads. They sent somebody down with a receipt for each bale, and every signature was right where it should be.',
     'The healers boiled old dressings through the night. The kitchens bought one bolt of cloth off the merchant the next morning and sent it upstairs cut into strips. You put down what they paid. It came to more than the freight charge on all three loads.',
     'The conductor handed you a blank sheet for the next run. The first column said PAID. You added a second one.'
-  ]),
+  ], 'The courier and a pony conductor review the freight ledger beside bales of cloth.'),
   plainrecord: ending('Mixed', 'Station office', 'Both names', [
     'You told Corven where you’d stood and which hand you’d used. Mera added what she’d seen from the window. Corven struck through the first account with a single line. There was still room on the sheet.',
     'You lost the office key and kept your market rounds. Corven drew up a rule for when a courier could turn the signal. He put it up on a hook where anygriff coming in could read it.',
     'The next time you brought him a ledger, there was a clean cup by your elbow. He moved the key out of the way so you could sit down.'
-  ]),
+  ], 'Corven shifts the station key to make room for a cup beside the courier’s ledger.'),
   bothhands: ending('Good', 'The near signal', 'A flag in time', [
     'You put both hands through the window and crossed them high. The guard saw you do it. A moment later a red flag went out exactly where the driver could see it.',
     'The engine stopped short of the loose stone. For a while all you could hear was the guard panting. Corven put his pencil down by the window. “I need the name of the griffon on that post.”',
     'You walked up to ask. The guard looked at the open window, then at the flag, and made you give your name first.'
-  ]),
+  ], 'The courier signals from the station window as a guard raises a red flag.'),
   runnersflag: ending('Mixed', 'The upper bend', 'The runner’s bucket', [
     'The runner tore free of the brambles and got to the guard. The flag came out too late for the engine to stop cleanly. Its front wheels jumped the rail. The rest of the train stayed put.',
     'The runner was holding their empty coal bucket when you came down. You filled it from the station kettle so the driver could wash the grit out of her eyes.',
     'Later the guard put in a new signal post. The runner came up with two buckets of bolts. This time you were there to take one.'
-  ]),
+  ], 'The coal runner and courier meet beside a new signal post with buckets of bolts.'),
   grounded: ending('Mixed', 'The service stairs', 'Ten steps', [
     'The hook went down. Mera caught you under the forearm and would have come down with you if the guard hadn’t caught her by the belt. The three of you stopped moving at once. It was an excellent feeling.',
     'You walked up ten steps and sat down. The train had stopped and your wing would be fine. You would have to do your rounds on foot for a while.',
     'Mera handed you the small end of her supper roll. You handed it back and tore the large end in two. She sat down beside you to eat.'
-  ]),
+  ], 'Mera and the courier share a roll on the service steps.'),
   ropecircle: ending('Mixed', 'The platform edge', 'Hold together', [
     'Sedge put the rope through the window. You got it around the driver and the brakemare reached her from inside. Together you lifted until she could pull her hoof free.',
     'The driver made it up the steps between you and Mera. Behind her the engine leaned far enough to put out its own fire. The line would be shut for months. Nobody asked you what the freight had been worth.',
     'When the council heard the crew, the driver asked you to sit where she could see you while she spoke. So you did.'
-  ])
+  ], 'The driver addresses the council with the courier sitting where she can see them.')
 };
