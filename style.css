@@ -111,3 +111,36 @@ dialog h2 { margin: 0; font-size: 1.9rem; font-weight: 500; }
 @media (forced-colors: active) {
   #title:focus { outline: 2px solid CanvasText; }
 }
+
+.book.book-ending {
+  display: block; width: 100%; background: transparent;
+  border: 0; border-radius: 0; box-shadow: none; overflow: visible;
+}
+.ending-plate {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: grid; place-items: center; width: 100%; height: 100vh; height: 100svh;
+  margin: 0; background: var(--ground);
+}
+.ending-plate img {
+  display: block; width: 100%; height: 100%; object-fit: cover; min-width: 0; min-height: 0;
+}
+.read-ending {
+  position: absolute; inset-block-end: max(1.25rem, env(safe-area-inset-bottom));
+  padding: .8rem 1.3rem; border: 1px solid var(--gold); border-radius: 3px;
+  background: var(--ground); color: var(--paper); font: 700 .97rem/1.4 system-ui, sans-serif;
+  text-underline-offset: .2em;
+}
+.read-ending:hover { background: #304b3f; }
+.read-ending:focus-visible { outline-color: var(--gold); box-shadow: 0 0 0 7px var(--ground); }
+.book-ending .story {
+  width: min(92%, 54rem); min-height: 0; margin: 1.5rem auto 0;
+  border: 1px solid #8f7652; border-radius: 4px;
+}
+@media (max-aspect-ratio: 1/1), (min-aspect-ratio: 2/1) {
+  .ending-plate::before {
+    content: ""; position: absolute; z-index: -1; inset: -2rem;
+    background: linear-gradient(#16292566, #162925b3), var(--ending-art) center / cover;
+    filter: blur(22px);
+  }
+  .ending-plate img { object-fit: contain; }
+}

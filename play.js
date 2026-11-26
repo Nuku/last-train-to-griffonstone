@@ -42,6 +42,9 @@ function load() {
 const state = load();
 const actionList = byId('actions');
 const backButton = byId('back-button');
+const endingPlate = byId('ending-plate');
+const endingImage = byId('ending-image');
+const readEnding = byId('read-ending');
 const journal = byId('journal');
 const restart = byId('restart');
 
@@ -58,10 +61,26 @@ function restartStory() {
   render(true);
 }
 
-function render(focusTitle = false) {
+function focusStory() {
+  byId('title').focus({ preventScroll: true });
+  byId('story').scrollIntoView({ block: 'start' });
+}
+
+function render(moveFocus = false) {
   const key = state.route.at(-1);
   const node = story[key];
-  if (node.outcome) state.found.add(key);
+  const isEnding = Boolean(node.outcome);
+  if (isEnding) state.found.add(key);
+  byId('book').classList.toggle('book-ending', isEnding);
+  byId('cover-plate').hidden = isEnding;
+  endingPlate.hidden = !isEnding;
+  if (isEnding) {
+    const imagePath = 'endings/' + key + '.webp';
+    endingImage.alt = node.artAlt;
+    endingImage.src = imagePath;
+    endingPlate.style.setProperty('--ending-art', 'url("' + imagePath + '")');
+    readEnding.setAttribute('aria-label', 'Read ending · ' + node.title);
+  }
   save();
   byId('count').textContent = state.found.size + ' / ' + endings.length;
   byId('place').textContent = node.outcome ? node.outcome + ' ending · ' + node.place : node.place;
@@ -86,9 +105,13 @@ function render(focusTitle = false) {
     addOption('Open the ending journal.', '', openJournal);
   }
   backButton.hidden = state.route.length < 2;
-  if (focusTitle) {
-    title.focus({ preventScroll: true });
-    byId('story').scrollIntoView({ block: 'start' });
+  if (moveFocus) {
+    if (isEnding) {
+      readEnding.focus({ preventScroll: true });
+      endingPlate.scrollIntoView({ block: 'start' });
+    } else {
+      focusStory();
+    }
   }
 }
 
@@ -142,8 +165,10 @@ backButton.addEventListener('click', () => {
   state.route.pop();
   render(true);
 });
-document.querySelector('.skip').addEventListener('click', (event) => {
-  event.preventDefault();
-  byId('title').focus();
-});
+for (const link of [document.querySelector('.skip'), readEnding]) {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    focusStory();
+  });
+}
 render();

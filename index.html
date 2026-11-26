@@ -6,9 +6,9 @@
   <meta name="description" content="A choose-your-own-adventure in the revived Griffonstone of David Silver’s Birds of a Feather.">
   <meta name="theme-color" content="#162925">
   <title>The Last Train to Griffonstone</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="story.js"></script>
-  <script defer src="play.js"></script>
+  <link rel="stylesheet" href="style.css?v=ending-art">
+  <script defer src="story.js?v=ending-art"></script>
+  <script defer src="play.js?v=ending-art"></script>
 </head>
 <body>
   <a class="skip" href="#story">Skip to story</a>
@@ -19,11 +19,15 @@
       <button class="quiet" id="restart-button" type="button">Start over</button>
     </nav>
   </header>
-  <main class="book">
-    <aside class="plate" aria-label="Griffonstone railway illustration">
+  <main id="book" class="book">
+    <aside id="cover-plate" class="plate" aria-label="Griffonstone railway illustration">
       <img src="griffonstone.webp" width="1280" height="853" alt="A griffon courier watches the steam train approach along the rocky slopes of Griffonstone at dusk.">
       <div class="caption"><span>THE EQUestrian LINE</span><span>Evening service</span></div>
     </aside>
+    <figure id="ending-plate" class="ending-plate" hidden>
+      <img id="ending-image" alt="">
+      <a href="#story" id="read-ending" class="read-ending">Read ending</a>
+    </figure>
     <article id="story" class="story" aria-labelledby="title">
       <div class="eyebrow" id="place"></div>
       <h1 id="title" tabindex="-1">The Last Train to Griffonstone</h1>
